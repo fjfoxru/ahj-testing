@@ -1,7 +1,7 @@
 import { isCheckPaySystem } from '../validators';
 
 test('При вводе первой цифры = 2 выдаст - Мир', () => {
-  const input = '2111111111111111'; 
+  const input = '2111111111111111';
   expect(isCheckPaySystem(input)).toBe('Мир');
 });
 

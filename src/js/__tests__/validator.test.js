@@ -1,12 +1,12 @@
 import { isValid } from '../validators';
 
 test('Ввод букв дываст false', () => {
-  const input = 'вымымв'; 
+  const input = 'вымымв';
   expect(isValid(input)).toBe(false);
 });
 
 test('Правильный номер вызывает true', () => {
-  const input = '4111111111111111'; 
+  const input = '4111111111111111';
   expect(isValid(input)).toBe(true);
 });
 

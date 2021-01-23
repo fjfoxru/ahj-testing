@@ -28,20 +28,21 @@ export default class CardFormWidget {
 
   static get aboutSelector() {
     return '[data-id=innogrn-about]';
-  }  
+  }
 
   bindToDOM() {
     this.parentEl.innerHTML = this.constructor.markup;
     const input = this.parentEl.querySelector(this.constructor.inputSelector);
     const submit = this.parentEl.querySelector(this.constructor.submitSelector);
-    input.addEventListener('input', evt => this.onInput(evt));
-    submit.addEventListener('click', evt => this.onSubmit(evt));
+    input.addEventListener('input', (evt) => this.onInput(evt));
+    submit.addEventListener('click', (evt) => this.onSubmit(evt));
   }
-  onInput(evt) {
+
+  onInput() {
     const inputEl = this.parentEl.querySelector(this.constructor.inputSelector);
     const inputAbout = this.parentEl.querySelector(this.constructor.aboutSelector);
     const PaySystem = isCheckPaySystem(inputEl.value);
-    inputAbout.innerHTML=`${PaySystem}`;
+    inputAbout.innerHTML = `${PaySystem}`;
   }
 
   onSubmit(evt) {
